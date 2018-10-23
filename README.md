@@ -2,7 +2,7 @@
 
 At first glance, this challenge looked like a binary image segmentation task. 
 So at the beginning, I experimented with many model architectures and hyperparameters. 
-Ran hundreds of experiments, thanks for 4x1080Ti rig. Final model that I've ended up was U-Net like models with a few bells & whistles.
+Ran hundreds of experiments, thanks for 4x1080Ti rig. Final solution included three U-Net like models with a few bells & whistles. They were ensembled with models of my teammate for final submission.
 
 ## Lessons learned
 
@@ -72,7 +72,6 @@ Masks were conditionaly zeroed if classifier predicted empty mask. Non-zero mask
 1. Threshold tuning
 1. Regularization with auxilarity loss
 1. Predicting salt/not-salt
-1. 
 
 ## Tried but not properly tested
 1. Stochastic weight averaging
