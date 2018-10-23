@@ -1,0 +1,10 @@
+.idea/
+__pycache__/
+runs/
+experiments/
+submissions/
+submits/
+.ipynb_checkpoints/
+.pytest_cache/
+*.npy
+pretrain/*.tar
