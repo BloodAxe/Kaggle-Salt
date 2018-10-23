@@ -18,18 +18,25 @@ Ran hundreds of experiments, thanks for 4x1080Ti rig. Final solution included th
 
 ### DPN encoder with U-Net like decoder
 
-### WiderResNet encoder with U-Net like decoder
+Dual-path encoder with U-Net decoder implementation borrowed from https://github.com/selimsef/dsb2018_topcoders/tree/master/albu/src.
+
+### WiderResNet encoder with U-Net like decoder and Object Context
+
+1. WiderResNet38 encoder
+1. U-Net like decoder (Double [conv3x3 + bn + relu])
+1. OCNet in the central bottleneck. OCNet dilation factors were [2,4,6]
+1. SCSE blocks in decoder
+1. Input tensor was 3-channel image [I, Y, I * Y]
+1. In addition to mask output, model was also predicting salt presence
+1. There was additional loss for regularization attached to conv3 output of the encoder
 
 ### WiderResNet encoder with U-Net like decoder and hypercolumn
 
 1. WiderResNet38 encoder
 1. U-Net like decoder (Double [conv3x3 + bn + relu])
-1. OCNet in the central bottleneck. OCNet dilation factors were [2,4,6]
-1. SCSE blocks in encoder & decoder
-1. Depth value added to output of central block
+1. SCSE blocks in decoder
 1. Input tensor was 3-channel image [I, Y, I * Y]
 1. In addition to mask output, model was also predicting salt presence
-1. There was additional loss for regularization attached to conv3 output of the encoder
 
 ## Dataset & Folds
 
